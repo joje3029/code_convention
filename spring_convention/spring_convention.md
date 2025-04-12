@@ -2077,3 +2077,21 @@ refactor: 서비스 계층 리팩토링
 
 BREAKING CHANGE: 서비스 메서드 시그니처 변경
 ```
+
+### 참고 자료
+
+이 문서는 아래의 자료들을 참고하여 작성되었습니다:
+
+1. [Naver Hackday Conventions for Java](https://naver.github.io/hackday-conventions-java/)
+   - 네이버의 Java 코딩 컨벤션 가이드
+   - 실무에서 검증된 코딩 스타일과 규칙을 제공
+
+2. [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)
+   - Google의 Java 코딩 스타일 가이드
+   - 널리 사용되는 Java 코딩 표준
+
+3. [Oracle Code Conventions for the Java Programming Language](https://www.oracle.com/java/technologies/javase/codeconventions-introduction.html)
+   - Oracle의 Java 프로그래밍 언어 코딩 컨벤션
+   - Java 언어의 공식적인 코딩 표준
+
+이 문서는 위의 자료들을 참고하여 작성되었으며, Spring Boot 프로젝트에 특화된 내용을 추가하여 구성되었습니다.
