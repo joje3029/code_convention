@@ -8,6 +8,7 @@
 - [5. 파일 구조](#5-파일-구조)
 - [6. 작업 환경 설정](#6-작업-환경-설정)
 - [7. 프론트엔드 테스트 가이드](#7-프론트엔드-테스트-가이드)
+- [8. .gitignore 가이드](#8-gitignore-가이드)
 
 ## 1. 명명 규칙 (Naming Conventions)
 
@@ -657,6 +658,100 @@ const some_var = 123
 3. 팀 컨벤션의 자동 적용
 4. 전반적인 코드 품질 향상
 5. 코드 리뷰 시간 절약
+
+## 8. .gitignore 가이드
+
+### 8.1 반드시 무시해야 하는 파일/디렉토리
+- `node_modules/` - 의존성 패키지 디렉토리
+- `.env` - 환경 변수 파일
+- `.env.local` - 로컬 환경 변수 파일
+- `.env.*.local` - 환경별 로컬 환경 변수 파일
+- `dist/` - 빌드 결과물 디렉토리
+- `build/` - 빌드 결과물 디렉토리
+- `.DS_Store` - macOS 시스템 파일
+- `Thumbs.db` - Windows 썸네일 캐시 파일
+- `*.log` - 로그 파일
+- `npm-debug.log*` - npm 디버그 로그
+- `yarn-debug.log*` - yarn 디버그 로그
+- `yarn-error.log*` - yarn 에러 로그
+- `.idea/` - IntelliJ IDE 설정
+- `.vscode/` - VS Code 설정 (개인 설정 제외)
+- `coverage/` - 테스트 커버리지 리포트
+- `*.swp` - Vim 스왑 파일
+- `*.swo` - Vim 스왑 파일
+
+### 8.2 선택적으로 무시할 수 있는 파일/디렉토리
+- `.vscode/` - VS Code 설정 (팀 공통 설정은 포함)
+- `.idea/` - IntelliJ IDE 설정 (팀 공통 설정은 포함)
+- `*.local` - 로컬 설정 파일
+- `*.bak` - 백업 파일
+- `*.tmp` - 임시 파일
+
+### 8.3 절대 무시하면 안 되는 파일/디렉토리
+- `package.json` - 프로젝트 의존성 정의
+- `package-lock.json` - npm 의존성 잠금 파일
+- `yarn.lock` - yarn 의존성 잠금 파일
+- `tsconfig.json` - TypeScript 설정
+- `vue.config.js` - Vue 설정
+- `jest.config.js` - Jest 설정
+- `.eslintrc.js` - ESLint 설정
+- `.prettierrc` - Prettier 설정
+- `README.md` - 프로젝트 문서
+- `src/` - 소스 코드
+- `public/` - 정적 파일
+- `tests/` - 테스트 코드
+- `.gitignore` - Git 무시 설정 파일
+
+### 8.4 보안 관련 주의사항
+- API 키, 비밀번호, 토큰 등 민감한 정보가 포함된 파일은 절대 커밋하지 마세요
+- `.env` 파일은 반드시 `.gitignore`에 포함되어야 합니다
+- 민감한 정보는 환경 변수로 관리하고, `.env.example` 파일을 통해 필요한 환경 변수 목록을 공유하세요
+
+### 8.5 .gitignore 예제
+```gitignore
+# 의존성
+node_modules/
+.pnp/
+.pnp.js
+
+# 테스트
+coverage/
+.nyc_output/
+
+# 빌드
+dist/
+build/
+out/
+
+# 환경 변수
+.env
+.env.local
+.env.*.local
+
+# 로그
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# 에디터
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 운영체제
+.DS_Store
+Thumbs.db
+
+# 임시 파일
+*.tmp
+*.bak
+*.swp
+```
 
 ## 추가 제안사항
 
